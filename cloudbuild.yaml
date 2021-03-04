@@ -83,6 +83,10 @@ steps:
         if [ ${_CHECK_ONLY} = "FALSE" ]; then
           cd environments/$BRANCH_NAME      
           terraform apply -auto-approve
+        else
+          echo "***************************** SKIPPING APPLYING *******************************"
+          echo "Triggered from pull request."
+          echo "*******************************************************************************"
         fi
       else
         echo "***************************** SKIPPING APPLYING *******************************"
